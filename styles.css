@@ -5,8 +5,7 @@
 }
 
 body {
-  min-height: 100vh;
-  width: 100vw;
+  height: 100vh;
   font-family: Roboto, sans-serif;
 }
 
@@ -20,9 +19,9 @@ body {
   grid-area: 1/1/-1/2;
   display: grid;
   padding: 10px;
-  grid-template-rows: auto repeat(2, 1fr);
-  align-items: center;
-  gap: 10px;
+  grid-template-rows: auto auto 1fr;
+  align-items: flex-start;
+  gap: 50px;
 }
 
 .logo {
@@ -36,7 +35,7 @@ body {
 }
 
 .logo i {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .options {
@@ -58,8 +57,7 @@ ul > li .link {
   text-decoration: none;
   color: white;
 }
-a,
-p:hover {
+a p:hover {
   color: #7dd3fc;
 }
 .head {
@@ -96,14 +94,14 @@ p:hover {
   gap: 20px;
 }
 
-.info-bigger .text p{
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: black;
+.info-bigger .text p {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: black;
 }
 
-.info-bigger .text h3{
-    font-size: 1.5rem;
+.info-bigger .text h3 {
+  font-size: 1.5rem;
 }
 
 .search {
@@ -115,7 +113,7 @@ p:hover {
 }
 
 .search input {
-  height: 25px;
+  height: 30px;
   width: 400px;
   border: 3px solid #6d28d9;
   border-radius: 12.5px;
@@ -128,14 +126,14 @@ p:hover {
   gap: 30px;
 }
 
-.bi-bell{
-    font-size: 1.5rem;
+.bi-bell {
+  font-size: 1.5rem;
 }
 
-.info p{
-    font-size: 1.3rem;
-    color: black;
-    font-weight: bold;
+.info p {
+  font-size: 1.3rem;
+  color: black;
+  font-weight: bold;
 }
 
 .info img {
@@ -156,6 +154,7 @@ p:hover {
 button {
   height: 50px;
   width: 75px;
+  font-weight: bold;
   color: white;
   background-color: #6d28d9;
   padding: 10px;
@@ -163,14 +162,133 @@ button {
   border-radius: 20px 10px;
   font-size: 1rem;
   cursor: pointer;
+  transition-duration: 500ms;
 }
 button:hover {
   padding: 10px;
   transform: scale(1.1);
   border-radius: 10px 20px;
   color: #7dd3fc;
+  transition-duration: 500ms;
 }
 .main-content {
   background-color: #e5e7eb;
   grid-area: 2/2/-1/-1;
+  display: grid;
+  grid-template: 1fr 1fr/3fr 1fr;
+  padding: 20px;
+  column-gap: 30px;
+}
+
+.your-projects {
+  grid-area: 1/1/-1/2;
+  display: grid;
+  grid-template: 30px 1fr/1fr;
+  gap: 10px;
+}
+.your-projects > p,
+.announ > p,
+.trending > p {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: black;
+}
+.cards {
+  grid-area: 2/1/-1/2;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+.card,
+.informations,
+.trends-box {
+  background-color: #f5f3ff;
+  border-radius: 10px;
+  padding: 10px;
+  padding-left: 20px;
+  box-shadow: 10px 10px 5px -10px gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 10px solid #6d28d9;
+}
+
+.card .icons {
+  font-size: 1.2rem;
+  margin-top: 15px;
+  align-self: flex-end;
+  display: flex;
+  gap: 15px;
+  margin-right: 15px;
+}
+
+.icons i:hover {
+  transform: scale(1.2);
+}
+
+.card p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+}
+
+.card .description {
+  margin-top: 10px;
+  width: 85%;
+}
+
+.announ {
+  grid-area: 1/2/2/-1;
+  display: grid;
+  grid-template: 30px 1fr/1fr;
+  gap: 10px;
+}
+
+.informations {
+  border: none;
+  justify-content: space-evenly;
+  padding: 30px;
+}
+
+.informations > hr {
+  height: 3px;
+  background-color: #6d28d9;
+  margin: 20px 0;
+}
+
+.small-info p {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.trending {
+  grid-area: 2/2/-1/-1;
+  display: grid;
+  grid-template: 30px 1fr/1fr;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.trends-box {
+  border: none;
+  justify-content: space-evenly;
+  padding: 30px;
+}
+
+.user-trends {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 10px 0;
+}
+
+.comm-info {
+  margin: 5px 0;
+}
+
+.user-trends img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
 }
